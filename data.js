@@ -26,5 +26,17 @@ const PLAYERS = [
     nickname: "Hendo",
     photo: "https://icdn.empireofthekop.com/wp-content/uploads/2020/03/Jordan-Henderson-640x426.jpg",
     likes: 1000
+  },
+  {
+    number: 4,
+    name: "Virgil van Dijk",
+    nickname: "The Dyke",
+    photo: "https://as01.epimg.net/en/imagenes/2020/05/11/football/1589208621_384678_1589208751_noticia_normal_recorte1.jpg",
+    likes: 200
   }
 ]
+
+// players to add
+
+// 4 -- Virgil van Dijk -- The Dyke
+// https://as01.epimg.net/en/imagenes/2020/05/11/football/1589208621_384678_1589208751_noticia_normal_recorte1.jpg

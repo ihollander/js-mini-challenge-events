@@ -4,7 +4,7 @@ In this challenge, we're going to keep working on Ian's Liverpool fan page and g
 
 - Toggle the header color
 - Add new players
-- 'Like' a player 
+- 'Like' a player
 
 We've got some starter code already written for us (this should look somewhat familiar from the previous challenge). Your job is to add some additional functionality to make our app more dynamic by handling user interactions.
 
@@ -12,7 +12,7 @@ There's a section in this Readme file for your notes on each deliverable. As you
 
 ## Deliverable 1: Toggle Header
 
-**When a user clicks the header**, the color should toggle between black and red. 
+**When a user clicks the header**, the color should toggle between black and red.
 
 To get you started, there's a helper function already written takes in an element and toggles its color that you can use. You can try it out in your console:
 
@@ -20,13 +20,18 @@ To get you started, there's a helper function already written takes in an elemen
 toggleColor(document.querySelector("h1#header"))
 ```
 
-Try calling it a few times to see the color switch back and forth. 
+Try calling it a few times to see the color switch back and forth.
 
 Once you have it working in the console, write an event listener that will use this helper function to change the color of the header when a user clicks on it.
 
 **YOUR NOTES**
 ```
-
+// you need to select the element
+let header = document.querySelector("h1#header");
+// add an event listener for that element, on click, call the toggleColor func with the header as an argument
+header.addEventListener('click', function(e) {
+  toggleColor(header)
+})
 ```
 
 ## Deliverable 2: Create Player
@@ -43,12 +48,14 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+// need to target the form, add an event listener to that -- prevent the default behavior too so it doesn't refresh yay
+// create a new object from the data in the input fields with that need thing where you get access to the input field and their value from the form like whaaaaaaaat
+// call render player on that and voila, liverpool players instead of ajax players even though we covered ajax today ¯\_(ツ)_/¯
 ```
 
 ## Deliverable 3: Like Button
 
-**When a user clicks the like button for a player**, that player's likes should increase by 1. 
+**When a user clicks the like button for a player**, that player's likes should increase by 1.
 
 You can decide if you'd like to use *event delegation* to handle this, or if you'd like to attach *individual event listeners* to each like button. Regardless of the approach you take, the like button feature should work for all players (including new players that get added when a user fills out the form).
 
