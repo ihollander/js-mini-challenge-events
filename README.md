@@ -22,7 +22,7 @@ In this challenge, we're going to keep working on Ian's Liverpool fan page and g
 
 - Toggle the header color
 - Add new players
-- 'Like' a player 
+- 'Like' a player
 
 We've got some starter code already written for us (this should look somewhat familiar from the previous challenge). Your job is to add some additional functionality to make our app more dynamic by handling user interactions.
 
@@ -30,21 +30,24 @@ There's a section in this Readme file for your notes on each deliverable. As you
 
 ## Deliverable 1: Toggle Header
 
-**When a user clicks the header**, the color should toggle between black and red. 
+**When a user clicks the header**, the color should toggle between black and red.
 
 To get you started, there's a helper function already written takes in an element and toggles its color that you can use. You can try it out in your console:
 
 ```js
-toggleColor(document.querySelector("h1#header"))
+toggleColor(document.querySelector("h1#header"));
 ```
 
-Try calling it a few times to see the color switch back and forth. 
+Try calling it a few times to see the color switch back and forth.
 
 Once you have it working in the console, write an event listener that will use this helper function to change the color of the header when a user clicks on it.
 
 **YOUR NOTES**
-```
 
+```
+- toggleColor takes an argument of the element getting changed
+- need to addEventListener for a click on the element
+- kept getting a TypeError when I tried to do `header.addEventListener('click', toggleColor)`. guess i need to wrap that in another function?
 ```
 
 ## Deliverable 2: Create Player
@@ -54,23 +57,29 @@ Our app already has a few players in it (check out the starter code in `index.js
 **When a user submits the form**, the new player should be displayed on the bottom of the page (you can use the `renderPlayer` helper function from the starter code if you like). The data won't persist (when you refresh the page, the new player won't show up) - we'll see how to fix this later in the mod. For now, focus on getting the player on the page when the form is submitted!
 
 Some things to keep in mind:
-- If you see the page refresh, consider adding some code to *prevent* the *default* behavior of a form submitting.
-- Make sure you're using the form *submit* event, not the *click* event.
+
+- If you see the page refresh, consider adding some code to _prevent_ the _default_ behavior of a form submitting.
+- Make sure you're using the form _submit_ event, not the _click_ event.
 - You can use the `name` attribute of the input elements as an easy way to reference the input fields within the form. For example: `document.querySelector("#new-player-form").nickname` will look inside the `form#new-player-form` and return the `input` element with the `name='nickname'` attribute
-- Once you have access to an input field, you still need to retrieve its *value* to see what the user entered in the form!
+- Once you have access to an input field, you still need to retrieve its _value_ to see what the user entered in the form!
 
 **YOUR NOTES**
-```
 
+```
+just kinda did what was described above
 ```
 
 ## Deliverable 3: Like Button
 
-**When a user clicks the like button for a player**, that player's likes should increase by 1. 
+**When a user clicks the like button for a player**, that player's likes should increase by 1.
 
-You can decide if you'd like to use *event delegation* to handle this, or if you'd like to attach *individual event listeners* to each like button. Regardless of the approach you take, the like button feature should work for all players (including new players that get added when a user fills out the form).
+You can decide if you'd like to use _event delegation_ to handle this, or if you'd like to attach _individual event listeners_ to each like button. Regardless of the approach you take, the like button feature should work for all players (including new players that get added when a user fills out the form).
 
 **YOUR NOTES**
-```
 
+```
+- from button, go back up to parent element and then back down to like count
+- convert like count from string to int (strip away excess text then parseInt)
+- listen for click and then increment likes and replace inner text
+- I guess I should also increase player.likes somehow but I'm noooot quite sure how to access that
 ```
