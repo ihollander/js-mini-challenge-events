@@ -32,15 +32,41 @@ PLAYERS.forEach(renderPlayer)
 
 
 /***** Deliverable 1 *****/
+const header = document.querySelector("h1#header")
 function toggleColor(element) {
-  if (element.style.color === "red") {
-    element.style.color = "black"
+  if (element.target.style.color === "red") {
+    element.target.style.color = "black"
   } else {
-    element.style.color = "red"
+    element.target.style.color = "red"
   }
 }
-
+header.addEventListener("click", toggleColor)
 
 /***** Deliverable 2 *****/
+const addPlayerForm = document.querySelector("#new-player-form")
+
+function addPlayerSubmit(event) {
+  event.preventDefault()
+  const playerForm = event.target
+  
+  const number = playerForm.number.value
+  const name = playerForm.name.value
+  const nickname = playerForm.nickname.value
+  const photo = playerForm.photo.value
+
+  playerObj = {
+    number: number,
+    name: name,
+    nickname: nickname,
+    photo: photo,
+    likes: 1000
+  }
+
+  renderPlayer(playerObj)
+  event.target.reset()
+}
+
+addPlayerForm.addEventListener("submit", addPlayerSubmit)
+
 
 /***** Deliverable 3 *****/

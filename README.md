@@ -44,7 +44,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Previewed the toggle in the browser. Set a variable for header, updated the toggleColor function to reference the event.target, and added an event listener to the header to listen for a click and callback to toggleColor.
 ```
 
 ## Deliverable 2: Create Player
@@ -61,7 +61,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Used a little reference to the advanced event handling lab but felt okay about the content
 ```
 
 ## Deliverable 3: Like Button
