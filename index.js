@@ -47,9 +47,44 @@ header.addEventListener("click", event => {
 })
 
 
-
-// toggleColor()
-
 /***** Deliverable 2 *****/
+const playerForm = document.querySelector("#new-player-form")
+
+playerForm.addEventListener("submit", function(e) {
+  e.preventDefault()
+
+  const form = e.target
+    playerObj = {
+      number: form.number.value,
+      name: form.name.value,
+      nickname: form.nickname.value,
+      photo: form.photo.value,
+      likes: 0
+    }
+
+  form.reset()
+  renderPlayer(playerObj)
+})
+
 
 /***** Deliverable 3 *****/
+
+
+function addALike() {
+  document.addEventListener("click", function(e) {
+    if (e.target.matches('.like-button')) {
+      const player = e.target.parentElement
+      // console.log(player)
+      const likes = player.querySelector('.likes')
+      // console.log(likes)
+      const currentLikes = parseInt(likes.innerHTML)
+      // console.log(currentLikes)
+      const newLikes = currentLikes + 1
+      // console.log(newLikes)
+
+      likes.innerHTML = newLikes + " likes"
+    }
+  })
+}
+
+addALike()
