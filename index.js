@@ -70,3 +70,11 @@ addPlayerForm.addEventListener("submit", addPlayerSubmit)
 
 
 /***** Deliverable 3 *****/
+playerContainer.addEventListener("click", function(event) {
+  if (event.target.matches("button.like-button")) {
+    const player = event.target.closest(".player")
+    const likes = parseInt(player.querySelector(".likes").textContent.split(" ")[0])
+    player.querySelector(".likes").textContent = `${likes + 1} likes`
+  }
+
+})
