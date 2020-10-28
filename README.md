@@ -44,7 +44,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+First, I need to find the header; life is also easier when I set it to a variable (header). Next, I'll write a handler function for toggleColor; this modularizes the code when you call it in addEventListener. Finally, I'll write a line for adding the event listener for a click action. 
 ```
 
 ## Deliverable 2: Create Player
@@ -61,7 +61,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Fist, I need to find and set the form to a variable. Next, I need to make an event handler for submitting a form; this prevents default behavior (so there's no refresh/post), creates a player object from the captured data (plus some amount of likes I made up), calls on renderPlayer and feeds it the new player, and clears the inputs for the next player the user add.
 ```
 
 ## Deliverable 3: Like Button
@@ -72,5 +72,5 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
-
+I want to use event delecation for this one. To start, I need to add an event listener to playerContainer. In it, I need to set a conditional statement with a condition of the event target matching an element with the "like-button" class. If upon click the condition is met, it adds variables for the button, the playerDiv it's for (using the .closest technique from the lecture videos), the ptag the likes count lives in, and the actual content in said ptag, with the content replaced to an int of just the likes. Finally, it updates the ptag with the correct content (likes count + 1 + " likes").
 ```

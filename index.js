@@ -30,7 +30,6 @@ PLAYERS.forEach(renderPlayer)
 
 
 
-
 /***** Deliverable 1 *****/
 function toggleColor(element) {
   if (element.style.color === "red") {
@@ -40,7 +39,51 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector("h1#header")
+
+function handleToggleColor(e) {
+  toggleColor(e.target)
+}
+
+header.addEventListener('click', handleToggleColor)
+
+
 
 /***** Deliverable 2 *****/
+const newPlayerForm = document.querySelector("#new-player-form")
+
+function handlePlayerFormSubmit(e) {
+  e.preventDefault()
+  
+  const number = e.target.number.value
+  const name = e.target.name.value
+  const nickname = e.target.nickname.value
+  const photo = e.target.photo.value
+  
+  const playerObj = {
+    number: number,
+    name: name,
+    nickname: nickname,
+    photo: photo,
+    likes: 999
+  }
+
+  renderPlayer(playerObj) 
+
+  e.target.reset()
+}
+
+newPlayerForm.addEventListener('submit', handlePlayerFormSubmit)
+
+
 
 /***** Deliverable 3 *****/
+playerContainer.addEventListener('click', function (e) {
+  if (e.target.matches(".like-button")) {
+    const likeButton = e.target
+    const playerDiv = likeButton.closest(".player")
+    const likesPtag = playerDiv.querySelector(".likes")
+    const likesCount = parseInt(likesPtag.textContent.replace(' likes',''))
+    likesPtag.textContent = likesCount + 1 + ' likes'
+  }
+})
