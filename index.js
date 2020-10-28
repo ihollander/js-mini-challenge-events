@@ -21,6 +21,16 @@ function renderPlayer(player) {
 
   // append the element to the container
   playerContainer.append(playerDiv)
+
+  const likeBtn = playerDiv.querySelector(".like-button")
+  likeBtn.addEventListener("click", function() {
+    const playerLikes = playerDiv.querySelector(".likes")
+    player.likes += 1 
+    // can't figure out how to keep "likes" when adding a 1 like
+    
+    playerLikes.textContent = player.likes
+  
+  })
 }
 
 // for each player in the array, render to the DOM
@@ -32,6 +42,13 @@ PLAYERS.forEach(renderPlayer)
 
 
 /***** Deliverable 1 *****/
+
+const header = document.querySelector("h1#header")
+
+header.addEventListener("click", function() {
+  toggleColor(header)
+})
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -42,5 +59,29 @@ function toggleColor(element) {
 
 
 /***** Deliverable 2 *****/
+
+const playerForm = document.querySelector("#new-player-form")
+
+playerForm.addEventListener("submit", function(event) {
+  event.preventDefault()
+
+  const number = event.target.number.value
+  const name = event.target.name.value
+  const nickname = event.target.nickname.value
+  const photo = event.target.photo.value
+
+  const player = {
+    number: number,
+    name: name,
+    nickname: nickname,
+    photo: photo,
+    likes: 0
+  }
+
+  renderPlayer(player)
+
+  event.target.reset()
+})
+
 
 /***** Deliverable 3 *****/
