@@ -21,6 +21,15 @@ function renderPlayer(player) {
 
   // append the element to the container
   playerContainer.append(playerDiv);
+  
+  // deliverable 3
+  const likeButton = playerDiv.querySelector("button.like-button")
+  likeButton.addEventListener("click", function() {
+    const likePhrase = playerDiv.querySelector("p.likes").textContent
+    let likeCount = parseInt(likePhrase.replace(" likes",""));
+    likeCount++;
+    playerDiv.querySelector("p.likes").textContent = `${likeCount} likes`
+  })
 }
 
 // for each player in the array, render to the DOM
@@ -55,22 +64,15 @@ function getPlayer() {
   return player;
 }
 
-newPlayerForm.addEventListener("submit", function(event) {
+function submitNewPlayer(event) {
+  event.preventDefault();
   const newPlayer = getPlayer();
   renderPlayer(newPlayer);
-  event.preventDefault();
-});
+  newPlayerForm.reset()
+}
+
+newPlayerForm.addEventListener("submit", submitNewPlayer);
 
 /***** Deliverable 3 *****/
-const likeButtons = document.querySelectorAll("button.like-button");
-likeButtons.forEach(addLike);
 
-function addLike(button) {
-  let likeCount = button.parentElement.children[2].innerHTML.replace(" likes","");
-  likeCount = parseInt(likeCount);
-  button.addEventListener("click", function() {
-    likeCount++;
-    button.parentElement.children[2].innerText = `${likeCount} likes`
-    
-  });
-}
+// see lines 25-32

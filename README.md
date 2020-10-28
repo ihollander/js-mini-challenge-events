@@ -45,8 +45,6 @@ Once you have it working in the console, write an event listener that will use t
 **YOUR NOTES**
 
 ```
-- toggleColor takes an argument of the element getting changed
-- need to addEventListener for a click on the element
 - kept getting a TypeError when I tried to do `header.addEventListener('click', toggleColor)`. guess i need to wrap that in another function?
 ```
 
@@ -78,8 +76,7 @@ You can decide if you'd like to use _event delegation_ to handle this, or if you
 **YOUR NOTES**
 
 ```
-- from button, go back up to parent element and then back down to like count
-- convert like count from string to int (strip away excess text then parseInt)
+- had to convert like count from string to int (and strip away excess text)
 - listen for click and then increment likes and replace inner text
 - I guess I should also increase player.likes somehow but I'm noooot quite sure how to access that
 ```
