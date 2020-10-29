@@ -6,7 +6,6 @@ const playerContainer = document.querySelector(".player-container")
 function renderPlayer(player) {
   // create an element for the outer div
   const playerDiv = document.createElement("div")
-
   // set attributes on the outer div
   playerDiv.className = "player"
   playerDiv.dataset.number = player.number
@@ -17,8 +16,17 @@ function renderPlayer(player) {
     <img src="${player.photo}" alt="${player.name}">
     <p class="likes">${player.likes} likes</p>
     <button class="like-button">❤️</button>
-  `
+    `
+  //DEVLIVERABLE #3 *****************************
 
+  const likeButton = playerDiv.querySelector("button.like-button")
+  likeButton.addEventListener("click", function(event) {
+    const likes = playerDiv.querySelector("p.likes")
+    const totalLikes = parseInt(likes.textContent)
+    likes.textContent = totalLikes + 1 + " likes"
+  })
+
+  //******************************************* */
   // append the element to the container
   playerContainer.append(playerDiv)
 }
@@ -112,17 +120,12 @@ newPlayerForm.addEventListener("submit", function(event) {
   
 // })
 
-let likeBtns = document.querySelectorAll("button.like-button")
-let likes = document.querySelectorAll(".likes")
-let likeContainer = document.querySelectorAll("p.likes")
 
-PLAYERS.forEach(function(player) {
-  let likeCounter = player.likes
-  likeBtns.forEach(function(button){
-    button.addEventListener("click", function(event){
-      likeContainer.innerHTML = "yoyo"
-      
-    })
-  })
-})
+
+
+
+
+
+
+
 

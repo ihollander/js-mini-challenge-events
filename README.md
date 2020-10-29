@@ -74,5 +74,5 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
-
+I initially found a really roundabout, hard-coded way to increase the likes...but not for any new card. I've left it in (no shame!) And while it was inventive discovery, it was not the solution we were looking for (and I knew it). I revisted the Advanced Event Handling playlist and followed it's lead. I nested this third deliverable inside the starter code funcion #renderPlayer...
 ```
