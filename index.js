@@ -32,6 +32,7 @@ PLAYERS.forEach(renderPlayer)
 
 
 /***** Deliverable 1 *****/
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -40,7 +41,88 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector("h1#header")
+
+header.addEventListener("click", function() {
+  toggleColor(document.querySelector("h1#header"))
+})
+
+// function toggleRedBlack(event) {
+//   if (event.target.style.color === "red") {
+//     event.target.style.color = "black"
+//   } else {
+//     event.target.style.color = "red"
+//   }
+// }
+
+// const header = document.querySelector("h1#header")
+
+// header.addEventListener("click", toggleRedBlack)
 
 /***** Deliverable 2 *****/
 
+const newPlayerForm = document.querySelector("#new-player-form")
+
+newPlayerForm.addEventListener("submit", function(event) {
+  event.preventDefault()
+
+  const number = event.target.number.value
+  const name = event.target.name.value
+  const nickname = event.target.nickname.value
+  const photo = event.target.photo.value
+
+  const PlayerObj = {
+    number: number,
+    name: name,
+    nickname: nickname,
+    photo: photo,
+    likes: 0
+  }
+
+  renderPlayer(PlayerObj)
+
+  event.target.reset()
+})
+
 /***** Deliverable 3 *****/
+
+
+// let likeButtons = document.querySelectorAll("button.like-button")
+// let likeContainer = document.querySelectorAll("p.likes")
+
+// PLAYERS.forEach(function(player) {
+//   let likeCounter = player.likes
+//   if (player.number == "11") {
+//     likeButtons[0].addEventListener("click", function(event) {
+//     likeContainer[0].innerHTML = (likeCounter += 1) + " likes"
+//     })
+//   } else if (player.number == "9") {
+//     likeButtons[1].addEventListener("click", function(event) {
+//     likeContainer[1].innerHTML = (likeCounter += 1) + " likes"
+//     })
+//   } else if (player.number == "66") {
+//     likeButtons[2].addEventListener("click", function(event) {
+//     likeContainer[2].innerHTML = (likeCounter += 1) + " likes"
+//     })
+//   } else if (player.number == "14") {
+//     likeButtons[3].addEventListener("click", function(event) {
+//     likeContainer[3].innerHTML = (likeCounter += 1) + " likes"
+//     })
+//   }
+  
+// })
+
+let likeBtns = document.querySelectorAll("button.like-button")
+let likes = document.querySelectorAll(".likes")
+let likeContainer = document.querySelectorAll("p.likes")
+
+PLAYERS.forEach(function(player) {
+  let likeCounter = player.likes
+  likeBtns.forEach(function(button){
+    button.addEventListener("click", function(event){
+      likeContainer.innerHTML = "yoyo"
+      
+    })
+  })
+})
+

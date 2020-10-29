@@ -44,6 +44,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+i need a Header when Clicked in Toggles(changes) Color....since my helper method is already written, I'll first declare a variable for my target element, addEventListener to it and pass the helper method toggleColor ...
+I also practiced this same action using the a callback function featuring event#target
 
 ```
 
@@ -61,7 +63,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+...I want to have a Form that, when it Submits, Renders a new player with the attributes indicated in the form....this, as all submits, require the event.preventDefault...i'll use event.target to access the target data in the form...i'll create an object with the associative key/value pairs and pass that object into the helper method renderPlayer(player)...added the form input reset
 ```
 
 ## Deliverable 3: Like Button
