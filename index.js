@@ -40,7 +40,34 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector("#header")
+header.addEventListener("click", () => {
+	toggleColor(header)
+})
+
 
 /***** Deliverable 2 *****/
 
+const newPlayer = document.querySelector("#new-player-form")
+
+
+newPlayer.addEventListener("sumbit", () => {
+		if (newPlayer.target.elements === "number"); {
+			playerDiv.dataset.number = "number"
+	}	if (newPlayer.target.elements === "name"); {
+			player.name = "name"
+	} if (newPlayer.target.elements === "nickname"); {
+		player.nickname = "nickname"
+	} if (newPlayer.target.elements === "photo"); {
+		player.photo = "photo"
+	}
+
+})
+
 /***** Deliverable 3 *****/
+
+const likeButton = document.querySelector(".like-button")
+
+newPlayer.addEventListener("click", () => {
+
+})
