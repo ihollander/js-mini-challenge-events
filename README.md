@@ -37,13 +37,16 @@ To get you started, there's a helper function already written takes in an elemen
 ```js
 toggleColor(document.querySelector("h1#header"))
 ```
-
+ 
+ 
 Try calling it a few times to see the color switch back and forth. 
 
 Once you have it working in the console, write an event listener that will use this helper function to change the color of the header when a user clicks on it.
 
 **YOUR NOTES**
 ```
+ - event listener for header (click)
+ - when header is clicked, invoke toggle color 
 
 ```
 
@@ -61,7 +64,9 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+- when *form* is *submitted*
+- collect form info &
+- smack it on the DOM through renderPlayer 
 ```
 
 ## Deliverable 3: Like Button
@@ -72,5 +77,10 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
+- click event listener to player container 
+- if item clicked matches a like button 
+- find that like button's player through .closest player class 
+- update that player's like to +1 
+
 
 ```
