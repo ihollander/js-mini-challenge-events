@@ -66,7 +66,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-i can't tell if my code is accurate. wasn't able to find .target.elements in the console...
+Starting to be able to see what is required. Overwhelm is still a bit of an issue but trying to work thru it.
 
 ```
 
@@ -78,6 +78,6 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
-I really struggled with nearly all of this. I understand what is required and the concepts make sense to me when watching the videos (which are a-mazing, btw). But I'm having trouble with implementation. My team this week struggled as well, we couldn't accomplish much together, which is frustrating for all of us. And it is worrisome to me because we can't improve if we aren't implementing. And I really haven't been successful struggling alone :(
+
 
 ```

@@ -32,7 +32,7 @@ PLAYERS.forEach(renderPlayer)
 
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
+const toggleColor = element => {
   if (element.style.color === "red") {
     element.style.color = "black"
   } else {
@@ -51,23 +51,49 @@ header.addEventListener("click", () => {
 const newPlayer = document.querySelector("#new-player-form")
 
 
-newPlayer.addEventListener("sumbit", () => {
-		if (newPlayer.target.elements === "number"); {
-			playerDiv.dataset.number = "number"
-	}	if (newPlayer.target.elements === "name"); {
-			player.name = "name"
-	} if (newPlayer.target.elements === "nickname"); {
-		player.nickname = "nickname"
-	} if (newPlayer.target.elements === "photo"); {
-		player.photo = "photo"
+newPlayer.addEventListener("submit", (event) => {
+	event.preventDefault()
+
+	// setting variables for input 
+	// 'number' refers to the input in the HTML form
+	const number = event.target.number.value
+	const name = event.target.name.value
+	const nickname = event.target.nickname.value
+	const photo = event.target.photo.value
+
+// using above variables to set new Player for rendering
+	const player = {
+		number: number,
+		name: name,
+		nickname: nickname,
+		photo: photo,
+		likes: 0
 	}
+	
+	renderPlayer(player)	
+
+	event.target.reset()
 
 })
 
+
 /***** Deliverable 3 *****/
 
-const likeButton = document.querySelector(".like-button")
 
-newPlayer.addEventListener("click", () => {
+
+// created event listener, using (event) as my arguement. If event matches the like button, dial up to the nearest player and dial back down to the likes. Call likes.textContent, parse and add 1.
+
+playerContainer.addEventListener("click", (event) => {
+
+	if (event.target.matches(".like-button")) {
+		
+		const player  = event.target.closest(".player")
+		const likes = player.querySelector(".likes")
+		likes.textContent = parseInt(likes.textContent) + 1
+		
+		
+	}
+
+		
 
 })
