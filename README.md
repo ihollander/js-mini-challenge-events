@@ -44,7 +44,10 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Since the helper method already exists, no need to create the toggle function.
+Step 1. access the header by using the querySelector() method, and save it to a variable.
+Step 2. write an event listener that will use the toggleColor helper function. 
+        This will listen for click events on the header, and will run the helper function based on the conditional, toggling fthe header from black to red.
 ```
 
 ## Deliverable 2: Create Player
@@ -61,6 +64,11 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+Since the form already exists, no need to create the form itself.
+Step 1. access the new player form using the querySelector() method, and save it to a variable.
+Step 2. write an event listener that gathers the user's input in the form and records when it's been submitted.
+Step 3. render the new player on the page
+Step 4. clear the form for the next user when the submission is complete
 
 ```
 
@@ -72,5 +80,13 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
+Step 1. add an event listener to hear when the like button is clicked
+Step 2. select the like button based on a conditional and using .matches
+Step 3. find the div with the player class and save it to a variable so you can access likes
+Step 4. querySelector() the likes class to access the data inside, and save to a variable
+Step 5. use parseInt to take the text content and convert it into an integer from a string, 
+        save to a variable.
+Step 6. update the number of likes on the page by chaining the pTag with the text content 
+        and interpolating the new likes with the text field.
 
 ```
