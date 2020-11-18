@@ -68,7 +68,44 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector('#header')
+header.addEventListener("click", function(event) {
+  debugger
+  toggleColor(event.target)
+})
+
+
 /***** Deliverable 2 *****/
+const likes = document.querySelector('.likes')
+const button = document.querySelector('.like-button')
+
+function addlikes() {
+  let totalLikes = parseInt(likes.textContent)
+  totalLikes++
+  likes.textContent = `${totalLikes} Likes` 
+}
+
+button.addEventListener("click", addlikes)
+
+
 
 
 /***** Deliverable 3 *****/
+const form = document.querySelector('#new-goal-form')
+const goalId = player.goals.length + 1
+function addGoal(event) {
+  event.preventDefault()
+  const formLink = form.link.value
+  const formDescription = form.description.value
+  const goalObj = {
+    link: formLink,
+    description: formDescription,
+    id: goalId
+
+  }
+  renderGoal(goalObj)
+}
+
+// const goalBtn = form.goalButton 
+
+form.addEventListener("submit", addGoal)
