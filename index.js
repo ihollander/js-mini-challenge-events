@@ -60,6 +60,7 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -68,7 +69,43 @@ function toggleColor(element) {
   }
 }
 
+const h1Header = document.querySelector("#header")
+h1Header.addEventListener("click", toggleColor) // why the hell doesn't this work?!
+// h1Header.addEventListener("click", function () {
+// 	toggleColor(h1Header)
+// })
+
 /***** Deliverable 2 *****/
 
+const likeBtn = document.querySelector(".like-button")
+
+likeBtn.addEventListener("click", function() {
+	const likesCnt = document.querySelector(".likes")
+	player.likes++
+	likesCnt.textContent = player.likes + " Likes"
+})
 
 /***** Deliverable 3 *****/
+
+const newGoalForm = document.querySelector("#new-goal-form")
+
+newGoalForm.addEventListener("submit", handleNewGoalFormSubmit)
+
+let id = player.goals[player.goals.length -1].id + 1
+
+function handleNewGoalFormSubmit(event) {
+	event.preventDefault()
+
+	const link = event.target.link.value
+	const description = event.target.description.value
+
+	const goal = {
+		link: link,
+		description: description,
+		id: id++
+	}
+
+	renderGoal(goal)
+
+	event.target.reset()
+}
