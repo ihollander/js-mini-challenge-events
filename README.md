@@ -78,6 +78,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+I worked on this lab with a few classmates last night. I chimed in as much as i could but still struggling with the pace. Forms is really where I need a ton of reps and the practice excercises have been helping with that
 ```
 
