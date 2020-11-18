@@ -78,11 +78,11 @@ element.addEventListener("click",function(event) {
 
 /***** Deliverable 2 *****/
 
-const likebutton = document.querySelector(".like-button")
+const likeButton = document.querySelector(".like-button")
 
-likebutton.addEventListener("click", function(event){
+likeButton.addEventListener("click", function(event){
   const likes = document.querySelector('.likes')
-  const numberOfLikes = parseInt(likes.textContent) + 1
+  const numberOfLikes = parseInt(likes.textContent)++
   likes.textContent = `${numberOfLikes} Likes`
 })
 
@@ -95,7 +95,7 @@ newGoalForm.addEventListener("submit", function(event){
   const goalsArray = player.goals
 
   const goal = {
-    id: player.goals[goalsArray.length -1].id + 1,
+    id: player.goals[goalsArray.length -1].id++,
     playerId: 1,
     link: event.target.link.value,
     description: event.target.description.value
