@@ -68,7 +68,28 @@ function toggleColor(element) {
   }
 }
 
-/***** Deliverable 2 *****/
+document.querySelector("#header").addEventListener("click", function(e) {
+  toggleColor(e.target)
+})
 
+/***** Deliverable 2 *****/
+const like = document.querySelector('.like-button')
+like.addEventListener('click', function(){
+  const likes = document.querySelector('.likes')
+  const newlike = parseInt(likes.textContent) + 1
+  likes.textContent = newlike + ' likes'
+})
 
 /***** Deliverable 3 *****/
+
+const newGoal = document.querySelector('#new-goal-form')
+newGoal.addEventListener('submit', function(e){
+  e.preventDefault()
+  const goal = {
+    id: player.goals.id,
+    playerId: 1,
+    link: e.target.link.value,
+    description: e.target.description.value
+  }
+  renderGoal(goal)
+})
