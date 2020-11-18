@@ -60,6 +60,9 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
+
+const element = document.querySelector("h1#header")
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -68,7 +71,34 @@ function toggleColor(element) {
   }
 }
 
+element.addEventListener('click', function(){
+  toggleColor(element)
+})
 /***** Deliverable 2 *****/
 
+const like = document.querySelector('.like-button')
+
+like.addEventListener('click',function(){
+  const likesCount = document.querySelector('.likes')
+  const likesValue = parseInt(likesCount.textContent.split(' ')[0]) + 1
+  likesCount.textContent = `${likesValue} ${likesCount.textContent.split(' ')[1]}`
+})
+// note to future self, use better names please
 
 /***** Deliverable 3 *****/
+
+const newGoalForm = document.querySelector('#new-goal-form')
+
+newGoalForm.addEventListener('submit', function(e){
+  e.preventDefault()
+  const goalObject = {
+    //go into goals
+    //then from the top get the last index in the array
+    //take their id + 1
+    id: player.goals[player.goals.length - 1].id  + 1,
+    playerId: 1,
+    link: e.target.link.value,
+    description: e.target.description.value
+  }
+  renderGoal(goalObject)
+})
