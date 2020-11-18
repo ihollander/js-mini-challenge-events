@@ -60,6 +60,12 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
+
+const toggleHeader = document.querySelector("#header")
+toggleHeader.addEventListener("click", function(){
+  toggleColor(toggleHeader)
+})
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -70,5 +76,34 @@ function toggleColor(element) {
 
 /***** Deliverable 2 *****/
 
+const increaseLike = document.querySelector(".like-button")
+const likes = document.querySelector(".likes")
+
+increaseLike.addEventListener("click", function(){
+  const totalLike = parseInt(likes.textContent)
+  likes.textContent = totalLike + 1 + " Likes"
+})
 
 /***** Deliverable 3 *****/
+
+const form = document.querySelector("#new-goal-form")
+const formLink = form.querySelector("#goal-link")
+const formDescription = form.querySelector("#goal-description")
+
+form.addEventListener("submit", function(event){
+  event.preventDefault()
+  const link = event.target.link.value
+  const description = event.target.description.value
+
+  const lastGoalId = document.querySelector('#goals').lastChild.dataset.id
+  const newGoalId = parseInt(lastGoalId) + 1
+
+  const newGoal = {
+    id: newGoalId,
+    link: link,
+    description: description
+  }
+
+  renderGoal(newGoal)
+  event.target.reset()
+})
