@@ -60,6 +60,7 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -68,7 +69,33 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector("h1#header");
+header.addEventListener("click", function () { toggleColor(header) });
+
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector(".like-button");
+const likeParagraph = document.querySelector(".likes");
+
+likeButton.addEventListener("click", function(){
+  const likes = parseInt(likeParagraph.textContent);
+  const addLikes = likes + 1;
+  likeParagraph.textContent = `${addLikes} likes`; 
+});
 
 /***** Deliverable 3 *****/
+const form = document.querySelector("#new-goal-form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const goalLink = event.target.link.value
+  const goalDescription = event.target.description.value
+
+  const newGoal = {
+    link: goalLink,
+    description: goalDescription,
+  }
+  renderGoal(newGoal);
+
+  event.target.reset();
+})
