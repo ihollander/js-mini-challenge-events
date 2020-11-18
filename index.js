@@ -57,8 +57,6 @@ renderPlayer(player)
 /***** End of Starter Code ****/
 
 
-
-
 /***** Deliverable 1 *****/
 function toggleColor(element) {
   if (element.style.color === "red") {
@@ -68,7 +66,40 @@ function toggleColor(element) {
   }
 }
 
+document.querySelector("h1#header").addEventListener('click', function(e) {
+  toggleColor(e.target)
+})
+
 /***** Deliverable 2 *****/
+
+const playerForm = document.querySelector("#new-player-form")
+
+playerForm.addEventListener("submit", function(e) {
+  e.preventDefault()
+
+  const newPlayer = {
+    number: e.target.number.value,
+    name: e.target.name.value,
+    nickname: e.target.nickname.value,
+    photo: e.target.photo.value,
+    likes: 0
+  }
+
+
+  renderPlayer(newPlayer)
+})
 
 
 /***** Deliverable 3 *****/
+
+const playerContainer = document.querySelector(".player-container")
+
+playerContainer.addEventListener("click", function(e){
+  if (e.target.matches(".like-button")) {
+    const playerDiv = e.target.closest(".player")
+    const playerLikes = playerDiv.querySelector(".likes")
+    const newLikes = parseInt(playerLikes.textContent) + 1
+    playerLikes.textContent = `${newLikes} likes`
+
+  }
+})

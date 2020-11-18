@@ -18,27 +18,37 @@
 </head>
 <body>
   <h1 id="header">Welcome to Ian's Liverpool FC Fan Club</h1>
-  <div class="player">
-    <img src="https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg" alt="{player name}">
-    <h2>{Player Name}</h2>
-    <em>{Player Nickname}</em>
-    <p class="likes">{Player Likes} Likes</p>
-    <button class="like-button">❤️</button>
-    <h4>Great Goals</h4>
-    <ul id="goals">
-      <!-- add links to goals here -->
-    </ul>
-  </div>
-  <form id="new-goal-form">
-    <h4>Add New Goal Video</h4>
-
-    <label for="link">Link: </label>
-    <input type="text" name="link" id="goal-link">
-
-    <label for="description">Description: </label>
-    <textarea name="description" id="goal-description"></textarea>
-
-    <input type="submit" value="Add Video" />
+  <h3>Add a Player</h3>
+  <form id="new-player-form">
+    <input type="number" name="number" placeholder="Number">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="nickname" placeholder="Nickname">
+    <input type="text" name="photo" placeholder="Photo URL">
+    <input type="submit" value="Add Player">
   </form>
+  <div class="player-container">
+    <div class="player">
+      <img src="https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg" alt="{player name}">
+      <h2>{Player Name}</h2>
+      <em>{Player Nickname}</em>
+      <p class="likes">{Player Likes} Likes</p>
+      <button class="like-button">❤️</button>
+      <h4>Great Goals</h4>
+      <ul id="goals">
+        <!-- add links to goals here -->
+      </ul>
+    </div>
+    <form id="new-goal-form">
+      <h4>Add New Goal Video</h4>
+      
+      <label for="link">Link: </label>
+      <input type="text" name="link" id="goal-link">
+      
+      <label for="description">Description: </label>
+      <textarea name="description" id="goal-description"></textarea>
+      
+      <input type="submit" value="Add Video" />
+    </form>
+  </div>
 </body>
 </html>
