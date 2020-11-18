@@ -67,8 +67,48 @@ function toggleColor(element) {
     element.style.color = "red"
   }
 }
+let header = document.querySelector("h1#header")
+
+header.addEventListener("click", function() {
+  toggleColor(header)
+})
 
 /***** Deliverable 2 *****/
 
+const likeButton = document.querySelector('.like-button') // access 'like-button'
+let likesShow = document.querySelector('.likes') //access <p class="likes"> parseInt, then likes++
+
+// function addLike() {
+//   const likesNum = parseInt(likesShow.textContent)
+//   likesShow.textContent = likesNum ++ + "Likes"
+// }
+
+likeButton.addEventListener("click", function() {
+  let likesNum = parseInt(likesShow.textContent)
+  likesShow.textContent = likesNum + 1 + " Likes"
+})
 
 /***** Deliverable 3 *****/
+//- Link: https://youtu.be/6rmUwoM-KQs?t=131
+// - Description: What a hat trick! Amazing pace and dribbling for Salah's third goal of the game.
+
+ const form = document.querySelector('#new-goal-form')
+ const goalLinkForm = form.querySelector('#goal-link')
+ const goalDescriptions = form.querySelector('#goal-description')
+
+ form.addEventListener('submit', function(event) {
+   event.preventDefault()
+
+   const link = event.target.link.value
+   const description = event.target.description.value
+
+   const goalId = document.querySelector('#goals').lastChild.dataset.id
+   const newId = parseInt(goalId) + 1
+   
+   const newGoal = {
+     id: newId,
+     link: link,
+     description: description
+   }
+   renderGoal(newGoal)
+ })

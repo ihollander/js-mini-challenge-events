@@ -53,7 +53,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+refresher on syntax to access in DOM Tree
 ```
 
 ## Deliverable 3: Add a New Goal Video
