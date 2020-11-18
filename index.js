@@ -70,10 +70,11 @@ function toggleColor(element) {
 }
 
 const h1Header = document.querySelector("#header")
-h1Header.addEventListener("click", toggleColor) // why the hell doesn't this work?!
-// h1Header.addEventListener("click", function () {
-// 	toggleColor(h1Header)
-// })
+// h1Header.addEventListener("click", toggleColor)
+// won't work because toggleColor expects an element but event listener will pass an event to the callback
+h1Header.addEventListener("click", function () {
+	toggleColor(h1Header)
+})
 
 /***** Deliverable 2 *****/
 
