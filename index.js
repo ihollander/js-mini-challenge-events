@@ -60,15 +60,63 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-  if (element.style.color === "red") {
-    element.style.color = "black"
+// function toggleColor(element) {
+//   if (element.style.color === "red") {
+//     element.style.color = "black"
+//   } else {
+//     element.style.color = "red"
+//   }
+// }
+let header = document.querySelector("h1#header")
+
+header.addEventListener("click", function(){
+  if (header.style.color === "red") {
+    header.style.color = "black"
   } else {
-    element.style.color = "red"
+    header.style.color = "red"
   }
-}
+})
+
 
 /***** Deliverable 2 *****/
+const button = document.querySelector(".like-button")
 
+button.addEventListener("click", increment)
+
+function increment(){
+  const display = document.querySelector(".likes")
+  const likes = parseInt(display.textContent) + 1
+  display.textContent = `${likes} Likes`
+}
 
 /***** Deliverable 3 *****/
+
+const form = document.querySelector("#new-goal-form")
+
+form.addEventListener("submit", handleSubmit)
+
+function handleSubmit(event) {
+  event.preventDefault()
+  const link = event.target.link.value
+  const description = event.target.description.value
+  newGoal = {
+    link: link,
+    description:description
+  }
+  renderGoal(newGoal)
+  event.target.reset()
+  // const li = document.createElement("li")
+  // li.dataset.id = newGoal.id
+
+  // const p = document.createElement("p")
+  // p.textContent = newGoal.description
+
+  // const a = document.createElement("a")
+  // a.href = newGoal.link
+  // a.target = "_blank"
+  // a.textContent = newGoal.link
+  
+  // li.append(p, a)
+
+  // goalList.append(li)
+}
