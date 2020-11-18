@@ -68,7 +68,43 @@ function toggleColor(element) {
   }
 }
 
+const h1Header = document.querySelector("#header")
+
+h1Header.addEventListener("click", function() {
+  toggleColor(h1Header)
+})
+
+
+
 /***** Deliverable 2 *****/
+const likeBtn = document.querySelector('.like-button')
+const pLike = document.querySelector('.likes')
+
+likeBtn.addEventListener('click', function(){
+  const likes = parseInt(pLike.textContent) + 1 + " Likes"
+  pLike.textContent = likes
+})
 
 
 /***** Deliverable 3 *****/
+const form = document.querySelector( '#new-goal-form')
+const goalLinkForm = form.querySelector( '#goal-link')
+const goalDescription = form.querySelector( '#goal-description')
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault()
+
+  const link = event.target.link.value
+  const description = event.target.description.value
+
+  const goalId = document.querySelector('#goals').lastChild.dataset.id
+  const newId = parseINt(goalId) + 1
+
+  const newGoal = {
+    id: newId,
+    link: link,
+    description: description
+  }
+
+  renderGoal(newGoal)
+}) 
