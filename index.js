@@ -60,6 +60,11 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
+const element = document.querySelector("h1#header")
+
+
+
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -68,7 +73,36 @@ function toggleColor(element) {
   }
 }
 
-/***** Deliverable 2 *****/
+element.addEventListener("click", function() {
+  // console.log("hi")
+  // console.log(toggleColor)
+  toggleColor(element)
+})
 
+
+/***** Deliverable 2 *****/
+const likeButton = document.querySelector(".like-button")
+
+likeButton.addEventListener("click", function() {
+  // console.log("liked")
+  const likes = document.querySelector('.likes')
+  const likesNumber = parseInt(likes.textContent.split(' ')[0]) + 1
+  // debugger
+  likes.textContent = `${likesNumber} ${likes.textContent.split(' ')[1]}`
+})
 
 /***** Deliverable 3 *****/
+const goalForm = document.querySelector('#new-goal-form')
+
+goalForm.addEventListener("submit", function(e) {
+  e.preventDefault()
+  // console.log(e)
+  const goalObj = {
+    id: player.goals[player.goals.length - 1].id + 1,
+    playerId: 1, //id of player on page?
+    link: e.target.link.value, 
+    description: e.target.description.value
+  }
+  renderGoal(goalObj)
+    // debugger 
+})

@@ -44,7 +44,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+I created the variable element first as a global variable. Then in the addEventListener callback function I invoked the already made toggleColor function.
 ```
 
 ## Deliverable 2: Like Button
@@ -53,7 +53,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+first i found the like button and saved it to variable likeButton. then i created an event listener. in the callback function i saved the text "1000 likes" to a variable. To increase the number, i created another variable and split the likes text into two so that i could parse the "1000" into an integer. I then changed the likes.textContent to equal a string interpolation of my increasing likes and the rest of the original text (likes variable).
 ```
 
 ## Deliverable 3: Add a New Goal Video
@@ -78,6 +78,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+first i saved the form into a variable, goalForm. then i created an event listener; i made sure to use "submit" and the preventDefault() method. i created a variable of the goal object, goalObj. Without persisting/access to the db, I found the id using array bracket notation; i'm sure there's something less wild that that though ;) I am not quite sure how i would autopopulate the playerId key/value pairs. My Ruby brain says to make playerId equal to the id of the player we are viewing in the browser (show page), but again, I'd need the db for that.
 ```
 
