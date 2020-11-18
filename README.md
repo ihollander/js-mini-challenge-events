@@ -82,6 +82,6 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+lots of dev notes in Deliverable 3, index.js. i really wanted to get ul.children.length to work for data.id....
 ```
 
