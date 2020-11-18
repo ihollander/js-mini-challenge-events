@@ -44,6 +44,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+used querySelector to set #header variable
+created event listener w/click event and used cb function: toggleColor.
+not sure why i couldn't just reference toggleHeader, i.e., ("click", toggleHeader). But this other way works.
 
 ```
 
@@ -53,7 +56,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+wasn't sure if i could get this working properly. woohoo got it!!
+set up variables for like button and likes. parseInt stripped the "likes" from the textContent (yay!) so I could increment it by 1 and pass the function to the event listener.
 ```
 
 ## Deliverable 3: Add a New Goal Video
