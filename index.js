@@ -46,7 +46,7 @@ function renderPlayer(player) {
   nickname.textContent = player.nickname
 
   const likes = document.querySelector(".player .likes")
-  likes.textContent = `${player.likes} Likes`
+  likes.innerHTML = `<span id="like-count">${player.likes}</span> Likes`
 
   player.goals.forEach(renderGoal)
 }
@@ -60,15 +60,53 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-  if (element.style.color === "red") {
-    element.style.color = "black"
+function toggleColor() {
+  if (event.target.style.color){
+    if (event.target.style.color === "red") {
+      event.target.style.color = "black"
+    } else {
+      event.target.style.color = "red"
+    }
   } else {
-    element.style.color = "red"
+    event.target.style.color = "red"
   }
 }
 
+const h1 = document.querySelector("#header")
+h1.addEventListener("click", toggleColor)
+
 /***** Deliverable 2 *****/
+
+const playerClass = document.querySelector(".player")
+
+playerClass.addEventListener("click", function(){
+  const likeBtn = document.querySelector(".like-button")
+  const likeCount = document.querySelector("#like-count")
+
+  if (event.target === likeBtn) {
+    likeCount.innerText = parseInt(likeCount.innerText) + 1
+  }
+})
 
 
 /***** Deliverable 3 *****/
+
+const goalForm = document.querySelector("#new-goal-form")
+
+
+goalForm.addEventListener("submit", function(event) {
+  event.preventDefault()
+  const link = event.target.link.value
+  const description = event.target.description.value
+  const lastGoalId = goals.lastChild.dataset.id
+  const id = parseInt(lastGoalId) + 1
+
+  const goal = {
+    id: id,
+    link: link,
+    description: description
+  }
+
+  renderGoal(goal)
+  event.target.reset()
+})
