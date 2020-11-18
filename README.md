@@ -44,7 +44,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+When we need to pass a parameter, we use an "anonymous function"
 ```
 
 ## Deliverable 2: Like Button
