@@ -68,7 +68,39 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector("#header")
+
+header.addEventListener("click", function(){
+  toggleColor(header)
+})
+
 /***** Deliverable 2 *****/
+
+const button = document.querySelector(".like-button")
+const likes = document.querySelector(".likes")
+
+button.addEventListener("click", function(){
+  const likesCount = parseInt(likes.textContent)
+  likes.textContent = likesCount + 1 + " Likes"
+})
 
 
 /***** Deliverable 3 *****/
+
+const form = document.querySelector("#new-goal-form")
+
+form.addEventListener("submit", function(event){
+  event.preventDefault()
+  const link = event.target.link.value
+  const description = event.target.description.value 
+
+  const newGoal = {
+    id: "",
+    link: link,
+    description: description
+  }
+
+  renderGoal(newGoal)
+
+  event.target.reset()
+})

@@ -44,6 +44,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+I thought I'd be able to pass in the toggleColor function to the event listener but it didn't work.
 
 ```
 
