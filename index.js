@@ -1,7 +1,13 @@
 /***** Beginning of Starter Code ****/
 const goalList = document.querySelector("#goals")
-
+const header = document.querySelector('#header')
+const likes = document.querySelector('.likes')
+const likeBtn = document.querySelector('.like-button')
+const playerCont = document.querySelector('.player')
+const newGoal =document.querySelector('#new-goal-form')
+// console.log(likes, likeBtn)
 /*
+
 renderGoal function 
 - takes in a goal object { id, link, description}
 - creates elements:
@@ -60,15 +66,38 @@ renderPlayer(player)
 
 
 /***** Deliverable 1 *****/
-function toggleColor(element) {
+const toggleColor = (element) => {
   if (element.style.color === "red") {
     element.style.color = "black"
   } else {
     element.style.color = "red"
   }
+  // console.log(element)
 }
 
+header.addEventListener('click', e => {
+  if (e.target.textContent === header.textContent) {
+    toggleColor(header)
+  }
+})
+
+
 /***** Deliverable 2 *****/
+let like = 0+1
+
+playerCont.addEventListener('click', e => {
+  if (e.target.matches('button')) {
+    likes.textContent = `${like++} Likes`
+  }
+})
 
 
 /***** Deliverable 3 *****/
+
+newGoal.addEventListener('submit', e => {
+  e.preventDefault()
+  const description = newGoal.description
+  const link = newGoal.link
+  
+  
+})
