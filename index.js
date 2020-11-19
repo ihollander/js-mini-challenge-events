@@ -39,8 +39,43 @@ function toggleColor(element) {
     element.style.color = "red"
   }
 }
+const header = document.querySelector("h1#header");
+header.addEventListener("mouseover", function(e) {
+  e.target.style.cursor = "pointer";
+}) 
 
+header.addEventListener("click", function(e) {
+  toggleColor(header);
+})
 
 /***** Deliverable 2 *****/
+const form = document.querySelector("#new-player-form");
+
+form.addEventListener("click", function(e) {
+  e.preventDefault();
+
+  const playerNum = form.number.value;
+  const playerName = form.name.value;
+  const playerNickName = form.nickname.value;
+  const playerPhoto = form.photo.value;
+
+  const newPlayer = {number: playerNum, name: playerName, nickname: playerNickName, photo: playerPhoto, likes: 0};
+
+  renderPlayer(newPlayer);
+});
 
 /***** Deliverable 3 *****/
+
+function addLike(){
+  const likeBtn = document.querySelectorAll(".like-button");
+  const array = Array.from(likeBtn);
+
+  array.forEach(function(like) {
+    like.addEventListener("click", function(e) {
+      let numOfLikes = e.target.parentElement.querySelectorAll(".likes")[0].innerHTML;
+      numOfLikes.replace("likes ", "")
+      numOfLikes = parseInt(numOfLikes, 10)
+      e.target.parentElement.querySelectorAll(".likes")[0].innerHTML = (numOfLikes + 1)
+    })
+  })
+}
